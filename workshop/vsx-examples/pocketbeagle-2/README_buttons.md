@@ -6,8 +6,7 @@ Wait for button press on `P1.29` (i.e. Right Button on TechLab Cape).
 
 ## Overview
 
----This example demonstrates using Beagle Helper library to detect button press in PocketBeagle 2.---
-This example demonstrates using CharDev library in folder 'lib' to detect button press in PocketBeagle 2.
+This example demonstrates using `CharDev` library to detect button press in PocketBeagle 2.
 
 ## Challenges
 
