@@ -1,5 +1,69 @@
 # Experiments on Beaglebone microcomputers
 
-
 **Work-in-progress**
-2025-0716 new
+
+[PocketBeagle-2](https://www.beagleboard.org/boards/pocketbeagle-2) placed upon
+[Techlab cape](https://www.beagleboard.org/boards/techlab).
+
+
+## PocketBeagle 2 Python Examples
+
+The examples are based upon the original workshop `vsx-examples` Python examples. 
+I've modified them from an application point of view.
+
+The folder `pocketbeagle-2` provides [Python](https://www.python.org/) examples 
+for PocketBeagle 2 on best effort basis. A TechLab cape is required to run the examples.
+
+- [button](buttons.py): Simple example to detect button presses.
+- [fade](fade_intensity.py): Simple example to fade an LED in and out using PWM.
+- [light_sensor](light_sensor.py): Simple example logging light sensor data.
+- [seven_segment](seven_segment.py): Simple example to demonstrate 2 seven segments on TechLab Cape.
+- [tonal_buzzer](tonal_buzzer.py): Simple example to play Harry Potter meoldy on a buzzer.
+
+- [blinky](blinky): Simple example to toggle GPIOs
+- [eeprom](eeprom): Read and parse EEPROM contents.
+- [rgb_led](rgb_led): Simple example using RGB Led using the multicolor LED Linux driver.
+
+## My Code tree setup
+
+```console
+~/projects
+  | workshop
+       | vsx-examples
+          | libraries
+              sysfs.py
+              chardev.py
+              notes.py
+          | pocketbeagle-2
+              |rgb_led
+                 color_circle.py
+                 fade_intensity.py
+                 fade_brightness.py
+                 hue.py
+              heartbeat.py
+              ... (other Python files)
+
+```
+
+## Initial Prep
+
+Add some Python library folders to the path
+I've added a specific pocketbeagle-2 `lib` folder, for libraries only for a PocketBeagle-2
+and a common `libraries` folder, for libraries in common with Beaglebone Black.
+
+```console
+export PYTHONPATH=$HOME/projects/workshop/vsx-examples/pocketbeagle-2/lib:$PYTHONPATH
+export PYTHONPATH=$HOME/projects/workshop/vsx-examples/libraries:$PYTHONPATH
+```
+
+## Run Examples
+
+```console
+cd ~/projects/workshop/vsx-examples/pocketbeagle-2/
+python {example_name}.py
+```
+
+## History
+
+- 2025-0805 PP - add Pocketbeagle-2 Python examples.
+- 2025-0716 new
