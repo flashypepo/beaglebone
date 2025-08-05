@@ -2,7 +2,6 @@
 This example generates different color hues on the RGB LED
 2025-0802 PP: modified Path, add try-except
 """
-# 2025-0804 $PYTHONPATH must contain  folder 'lib' in folder 'pocketbeagle-2'
 from sysfs import Device
 from pathlib import Path
 from time import sleep

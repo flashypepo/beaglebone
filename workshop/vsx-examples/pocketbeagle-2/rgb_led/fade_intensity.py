@@ -1,6 +1,5 @@
 # 2025-0804 PP add try-except, $PYTHONPATH
 
-# 2025-0804 $PYTHONPATH must contain  folder 'lib' in folder 'pocketbeagle-2'
 from sysfs import Device
 from pathlib import Path
 from time import sleep

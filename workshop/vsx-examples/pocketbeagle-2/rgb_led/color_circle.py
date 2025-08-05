@@ -3,7 +3,6 @@ This example cycles through the base colors in the Color circle.
 2025-0804 PP restructuring workshop folder and Python file
 2025-0802 PP modified 'multi-led' >> 'rgb:' in folder techlab-led/leds
 """
-# 2025-08 $PYTHONPATH must contain folder 'lib' in folder 'pocketbeagle-2'
 from sysfs import Device
 from pathlib import Path
 from time import sleep
