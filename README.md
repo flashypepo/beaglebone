@@ -14,15 +14,13 @@ I've modified them from an application point of view.
 The folder `pocketbeagle-2` provides [Python](https://www.python.org/) examples 
 for PocketBeagle 2 on best effort basis. A TechLab cape is required to run the examples.
 
+- [rgb led](rgb_led]): Examples to control the RGB-LED on the TechLab cape.
 - [button](buttons.py): Simple example to detect button presses.
 - [fade](fade_intensity.py): Simple example to fade an LED in and out using PWM.
 - [light_sensor](light_sensor.py): Simple example logging light sensor data.
 - [seven_segment](seven_segment.py): Simple example to demonstrate 2 seven segments on TechLab Cape.
-- [tonal_buzzer](tonal_buzzer.py): Simple example to play Harry Potter meoldy on a buzzer.
+- [tonal_buzzer](tonal_buzzer.py): Simple example to play Harry Potter melody on a buzzer.
 
-- [blinky](blinky): Simple example to toggle GPIOs
-- [eeprom](eeprom): Read and parse EEPROM contents.
-- [rgb_led](rgb_led): Simple example using RGB Led using the multicolor LED Linux driver.
 
 ## My Code tree setup
 
