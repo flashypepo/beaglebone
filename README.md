@@ -1,6 +1,6 @@
 # Experiments on Beaglebone microcomputers
 
-**Work-in-progress**
+### Work-in-progress
 
 [PocketBeagle-2](https://www.beagleboard.org/boards/pocketbeagle-2) placed upon
 [Techlab cape](https://www.beagleboard.org/boards/techlab).
@@ -14,13 +14,13 @@ I've modified them from an application point of view.
 The folder `pocketbeagle-2` provides [Python](https://www.python.org/) examples 
 for PocketBeagle 2 on best effort basis. A TechLab cape is required to run the examples.
 
-- `rgb led`: Folder with examples to control the RGB-LED on the TechLab cape.
-- `buttons.py`: Simple example to detect button presses.
-- `fade`: Simple examples in folder `rgb_led` to fade an RGB-LED in and out using PWM.
+- `usrled.py`: example to control USR LED of the PocketBeagle. Replaced workshop `blinky.py`.
+- `rgbled.py`: Examples to control the RGB-LED on the TechLab cape.
+- `buttons.py`: Simple example to detect button release (or pressed which does not work yet).
 - `light_sensor.py`: Simple example logging light sensor data.
 - `seven_segment.py`: Simple example to demonstrate 2 seven segments on TechLab Cape.
 - `tonal_buzzer.py`: Simple example to play Harry Potter melody on a buzzer.
-
+- `heartbeat.py`: workshop example to control the trigger of a USR-LED.
 
 ## My Code tree setup
 
@@ -34,9 +34,6 @@ for PocketBeagle 2 on best effort basis. A TechLab cape is required to run the e
               notes.py
           | pocketbeagle-2
               |rgb_led
-                 color_circle.py
-                 fade_intensity.py
-                 fade_brightness.py
                  hue.py
               heartbeat.py
               ... (other Python files)
@@ -63,5 +60,6 @@ python {example_name}.py
 
 ## History
 
+- 2025-0814 PP - updated various Python files (rgbled.py, buttons.py)
 - 2025-0805 PP - add Pocketbeagle-2 Python examples.
-- 2025-0716 new
+- 2025-0716 new setup
