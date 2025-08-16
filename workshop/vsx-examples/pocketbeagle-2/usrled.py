@@ -1,3 +1,4 @@
+# 2025-0816 PP add debug-parameter in constructor
 # 2025-0813 PP modified using class USRLED
   # Technically, max_brightness will be an unsigned integer value. However,
   # since we never actually parse it, and writing to the file needs conversion
@@ -9,15 +10,33 @@ from pathlib import Path
 
 
 class USRLED():
+    # path to the USR-LEDs
     LEDPATH = "/sys/class/leds/beaglebone:green:usr"
+    # a useful selection of TRIGGERS
+    TRIGGERS = [
+        "none", "usb-host", "heartbeat", "default-on",
+        "timer", "oneshot", "disk-activity", "backlight", "activity",
+        "mmc0", "mmc1",
+    ]
 
-    def __init__(self, usrled=4):
+    def __init__(self, usrled=4, debug=False):
         LED = Path(self.LEDPATH + str(usrled))
-        print(f"usrled: {LED}")  # DEBUG
+        if debug:
+            print(f"usrled: {LED}")
         self._number_of_led = usrled  # PP: useful?
         self._led = Device(path=LED)
         self._max_brightness = self._led.sysfs("max_brightness")
         self._brightness = self._led.sysfs("brightness")
+        self._trigger = self._led.sysfs("trigger")
+        # init usr-led
+        self.init()
+
+    def init(self):
+        # set trigger to "none"
+        self._trigger.write_str("none")
+        # brightness to max
+        mb = self._max_brightness.read_str()
+        self._brightness.write_str(mb)
 
     def on(self, brightness=None):
         """
@@ -35,6 +54,16 @@ class USRLED():
         """
         self._brightness.write_str("0")
 
+    @property
+    def trigger(self):
+        return self._trigger.read_str()
+
+    @trigger.setter
+    def trigger(self, value="none"):
+        assert value in self.TRIGGERS, f"invalid value ({value}) for a trigger"
+        self._trigger.write_str(value)
+
+    # demo blinky - blobking function!
     def blinks(self, cycles=5):
         count = 0  # counter
         for blinks in range(cycles):
@@ -59,6 +88,10 @@ class USRLED():
 
 # test/demo
 if __name__ == "__main__":
-    led = USRLED(4)
+    # blinky: use USR-LED number 4
+    #led = USRLED(4)
+    #led.blinks(5)
+    # heartbeat: use USR-LED number 3
+    led = USRLED(3)
     print(led)
-    led.blinks(5)
+    led.trigger = "heartbeat"

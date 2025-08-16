@@ -8,8 +8,11 @@
 
 ## PocketBeagle 2 Python Examples
 
-The examples are based upon the original workshop `vsx-examples` Python examples. 
-I've modified them from an application point of view.
+The examples are based upon the original workshop `vsx-examples` for PocketBeagle-2 and the Techlab cape, which can be found on 
+[Techlab workshop PocketBeagle-2](https://github.com/beagleboard/vsx-examples/tree/main/PocketBeagle-2),
+including examples in another language [Rust](https://www.rust-lang.org/).
+
+I've modified the Python examples into object oriented code (classes), add exception handling and main execution so the source files can be used in `import` - see `techlabcape.py`.
 
 The folder `pocketbeagle-2` provides [Python](https://www.python.org/) examples 
 for PocketBeagle 2 on best effort basis. A TechLab cape is required to run the examples.
@@ -21,6 +24,7 @@ for PocketBeagle 2 on best effort basis. A TechLab cape is required to run the e
 - `seven_segment.py`: Simple example to demonstrate 2 seven segments on TechLab Cape.
 - `tonal_buzzer.py`: Simple example to play Harry Potter melody on a buzzer.
 - `heartbeat.py`: workshop example to control the trigger of a USR-LED.
+- `techlabcape.py`: a simple asyncio example of most of the devices on the Techlab cape (**work in progress**)
 
 ## My Code tree setup
 
@@ -33,21 +37,30 @@ for PocketBeagle 2 on best effort basis. A TechLab cape is required to run the e
               chardev.py
               notes.py
           | pocketbeagle-2
-              |rgb_led
-                 hue.py
-              heartbeat.py
-              ... (other Python files)
-
+             |lib
+                 libraries specific for Pocketbeagle-2 (currently empty)
+              Python sourcecode examples
+              README-files
+              techlabcape.py - an examples running most of the devices on the Techlab Cape
 ```
 
 ## Initial Prep
 
-Add some Python library folders to the path
+Add some Python library folders to the Python path.
 I've added a specific pocketbeagle-2 `lib` folder, for libraries only for a PocketBeagle-2
 and a common `libraries` folder, for libraries in common with Beaglebone Black.
 
+##### Pocketbeagle-2
+Add following to `.bashrc` or `.bash_aliases`:
 ```console
 export PYTHONPATH=$HOME/projects/workshop/vsx-examples/pocketbeagle-2/lib:$PYTHONPATH
+export PYTHONPATH=$HOME/projects/workshop/vsx-examples/libraries:$PYTHONPATH
+```
+
+##### Beaglebone Black
+Add following to `.bashrc` or `.bash_aliases`:
+```console
+export PYTHONPATH=$HOME/projects/workshop/vsx-examples/beaglebone-black/lib:$PYTHONPATH
 export PYTHONPATH=$HOME/projects/workshop/vsx-examples/libraries:$PYTHONPATH
 ```
 
@@ -60,6 +73,7 @@ python {example_name}.py
 
 ## History
 
-- 2025-0814 PP - updated various Python files (rgbled.py, buttons.py)
+- 2025-0816 PP - updated code tree setup, Python codefiles, add `techlabcape.py`
+- 2025-0814 PP - updated various Python files (`rgbled.py`, `buttons.py`)
 - 2025-0805 PP - add Pocketbeagle-2 Python examples.
 - 2025-0716 new setup

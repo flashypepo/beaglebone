@@ -1,8 +1,8 @@
-# Tonal Buzzer
+# Buzzer
 
 ## Goal
 
-Use the tonal buzzer to play meoldies.
+Use the buzzer to play melodies.
 
 ## Overview
 
@@ -29,3 +29,6 @@ Music notes are classified by their note name or musical note and these notes ma
 
 1. Can you modify the program to speed up the music tempo?
 2. Can you play a different melody? Inspirations can be found [here](https://github.com/robsoncouto/arduino-songs/tree/master).
+
+
+*(updated by PP: 2025-0816 removed word 'Tonal')*
