@@ -22,9 +22,10 @@ for PocketBeagle 2 on best effort basis. A TechLab cape is required to run the e
 - `buttons.py`: Simple example to detect button release (or pressed which does not work yet).
 - `light_sensor.py`: Simple example logging light sensor data.
 - `seven_segment.py`: Simple example to demonstrate 2 seven segments on TechLab Cape.
-- `tonal_buzzer.py`: Simple example to play Harry Potter melody on a buzzer.
+- `buzzer.py`: Simple example to play Harry Potter melody on a buzzer. Replaced workshop `tonal_buzzer.py`.
 - `heartbeat.py`: workshop example to control the trigger of a USR-LED.
-- `techlabcape.py`: a simple asyncio example of most of the devices on the Techlab cape (**work in progress**)
+- `techlabcape.py`: a simple `asyncio` example for most of the devices on the Techlab cape (**work in progress**)
+
 
 ## My Code tree setup
 
@@ -43,6 +44,7 @@ for PocketBeagle 2 on best effort basis. A TechLab cape is required to run the e
               README-files
               techlabcape.py - an examples running most of the devices on the Techlab Cape
 ```
+
 
 ## Initial Prep
 
@@ -64,12 +66,14 @@ export PYTHONPATH=$HOME/projects/workshop/vsx-examples/beaglebone-black/lib:$PYT
 export PYTHONPATH=$HOME/projects/workshop/vsx-examples/libraries:$PYTHONPATH
 ```
 
+
 ## Run Examples
 
 ```console
 cd ~/projects/workshop/vsx-examples/pocketbeagle-2/
 python {example_name}.py
 ```
+
 
 ## History
 
